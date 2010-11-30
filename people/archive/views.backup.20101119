@@ -1,0 +1,21 @@
+from django.shortcuts import HttpResponse
+from sams.people.models import Person
+
+def index(request):
+    html = "<center><H1>People</H1></center><HR>"
+    lst = Person.objects.all()   # what we have in lst are the names
+                                 # of all the people in the database
+#    for x in lst
+#        html += print ("%s\n",x)
+
+    return HttpResponse(html)
+    
+def colors(request):
+    colors = ("BLUE","RED","GREEN")
+    response = HttpResponse()
+    response.write("<HTML><BODY>\n")
+    response.write("<H1>Color Index</H1><HR>\n")
+    for c in colors:
+        response.write("<FONT COLOR=%s><LI>%s</LI></FONT>\n" % (c,c))
+    response.write("</BODY></HTML>")
+    return response

@@ -1,0 +1,1 @@
+scite settings.py urls.py ./people/views.py ./people/models.py ./Fitness/views.py ./Fitness/models.py &
