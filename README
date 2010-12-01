@@ -1,1 +1,3 @@
-I dont see a reason why this wouldnt work on any machine with python and django (and sqlite) installed.
+I don't see a reason why this wouldnt work on any machine with python and django (and sqlite) installed.
+
+Well after you rename the project to 'sams' and who know what else will bite you...
