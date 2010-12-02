@@ -1,6 +1,6 @@
 # Crete your views here.
 from django.shortcuts import HttpResponse
-from sams.Fitness.models import Reps
+from mydjango.Fitness.models import Reps
 
 
 def index(request):

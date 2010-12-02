@@ -1,5 +1,5 @@
 from django.shortcuts import HttpResponse
-from sams.people.models import Person
+from mydjango.people.models import Person
 
 def index(request):
     response = HttpResponse()
