@@ -17,8 +17,8 @@ def what(request):
     response.write("<center><H1>what</H1></center><HR>\n")
     lst = Person.objects.all()
     for p in lst:
-        link = "<a href=\"Info/%d/\">\n" % p.id
-        response.write("<li>%s/%s</a></li>\n" % (link,p.name)) 
+        link = "<a href=\"/people/Info/%d/\">\n" % p.id
+        response.write("<li>%s%s</a></li>\n" % (link,p.name)) 
     response.write("</body></html>\n")
     return response
     
