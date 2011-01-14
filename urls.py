@@ -13,10 +13,14 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     (r'^WebMaster/', include(admin.site.urls)),
-    (r'^people/colors/$',  'mydjango.people.views.colors'),
-    (r'^people/[a-z]/$',  'mydjango.people.views.colors'),
-    (r'^people/[A-Z]/$',  'mydjango.Fitness.views.index'),
+    (r'^colors/$',  'mydjango.people.views.colors'),
+    (r'^people/Info/(?P<pID>\d+)/',  'mydjango.people.views.details'),
+    (r'^people/Info/',  'mydjango.people.views.details'),
     (r'^people/', 'mydjango.people.views.index'),
+
+    (r'^fitness/reps/', 'mydjango.Fitness.views.replist'),
+    (r'^fitness/weight/', 'mydjango.Fitness.views.weightlist'),
+    (r'^fitness/running/', 'mydjango.Fitness.views.runlist'),
     (r'^fitness/', 'mydjango.Fitness.views.index'),
-    (r'^', 'mydjango.people.views.colors'),
+    (r'^', 'mydjango.people.views.what'),
 )

@@ -1,24 +1,43 @@
 # Crete your views here.
 from django.shortcuts import HttpResponse
-from mydjango.Fitness.models import Reps
-
+from mydjango.Fitness.models import Reps, Weight, Running
 
 def index(request):
     response = HttpResponse()
-    response.write("<html><body><center><H1>reps</H1></center><HR>")
-    rlst = Reps.objects.all()   # what we have in lst are the names
-                                 # of all the people in the database
+    response.write("<html><body><center><H1> INDEX</H1></center><HR>")
+    replist = Reps.objects.all()
+    for p in replist:
+        junk = "I did %d %s on %s" % (p.reps,p.exercise,p.timeenter)
+        response.write("%s--%s<br>" % (junk,p.more)) 
+    response.write("</body></html>")
+    return response
 
-    for p in rlst:
-        link = "%s --%s" % (p.exercise,p.more)
-        response.write("%s<br>reps (or minutes) --  %d<hr>" % (link,p.reps)) 
-    #name = models.CharField('name', max_length=200)
-    #birthday = models.DateField('Birthday')
-    #gender = models.CharField(max_length=1, choices=gender_list)
-    #email = models.EmailField('Email', blank=True)
 
-    #favoriteURL =models.URLField('myURL', verify_exists=True)
-    #text = models.TextField('Desc', max_length=500, blank=True)
+def replist(request):
+    response = HttpResponse()
+    response.write("<html><body><center><H1>all my exercise that's fit to print</H1></center><HR>")
+    replist = Reps.objects.all()
+    for p in replist:
+        junk = "I did %d %s on %s" % (p.reps,p.exercise,p.timeenter)
+        response.write("%s--%s.<br>" % (junk,p.more)) 
+    return response
 
+def weightlist(request):
+    response = HttpResponse()
+    response.write("<html><body><center><H2>Obsessing on my weight</H2></center><HR>")
+    wlist = Weight.objects.all()
+    for p in wlist:
+        junk = "I weighed %s on %s" % (p.damage,p.timeenter)
+        response.write("%s--%s.<br>" % (junk,p.data)) 
+    response.write("</body></html>")
+    return response
+
+def runlist(request):
+    response = HttpResponse()
+    response.write("<html><body><center><H1>my running log</H1></center><HR>")
+    runlist = Running.objects.all()
+    for p in runlist:
+        junk = "I ran %d minutes on %s" % (p.minutes,p.timeenter)
+        response.write("%s--%s.<br>" % (junk,p.data)) 
     response.write("</body></html>")
     return response
