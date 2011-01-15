@@ -16,7 +16,7 @@ def what(request):
     response = HttpResponse()
     response.write("<body><html>\n")
     response.write("<title>database programming is what this is</title>\n")
-    response.write("<center><H3>some django code I whipped up to learn how to access a database from the web</H3></center><HR>\n")
+    response.write("<center><H3>Django code I fiddled up to learn how to access databases from the web</H3></center><HR>\n")
     link = "<a href=\"/people/\">\n"
     response.write("<li>%slist of people</a></li>\n" % link) 
     link = "<a href=\"/fitness/weight/\">\n"
@@ -25,7 +25,7 @@ def what(request):
     response.write("<li>%sskimpy running diary</a></li>\n" % link) 
     link = "<a href=\"/fitness/reps/\">\n"
     response.write("<li>%sexercise</a></li>\n" % link) 
-    response.write("<p>coming soon I will let a SQL query be modified everso slightly (I am worried about SQL injection)<p>\n")
+    response.write("<p>coming soon I will let a SQL query be modified by anybody<br> (I am concerned about SQL injection...)<p>\n")
     response.write("</body></html>\n")
     return response
     
@@ -33,10 +33,15 @@ def details(request, pID='0'):
     myname = "everybody"
     response = HttpResponse()
     response.write("<HTML><BODY>\n")
-    if (pID == '0'):
-        response.write("<center><H1>Details for %s</H1></center><HR>\n" % (myname))
-    else:
-        response.write("<center><H1>Details for Person%s</H1>\n" % pID)
+    try:
+        p = Person.objects.get(id=pID)
+        response.write("<h1>Details for %s</h1><hr>\n" % p.name)
+        response.write("<li>Birthday: %s</li>\n" % p.birthday)
+        response.write("<li>Email: %s</li>\n" % p.email)
+        response.write("<li>URL: %s</li>\n" % p.favoriteURL)
+        response.write("<li>Info: %s</li>\n" % p.text)
+    except Person.DoesNotExist:
+        response.write("Person Not Found")
     response.write("</BODY></HTML>\n")
     return response
     
