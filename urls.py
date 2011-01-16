@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     (r'^people/Info/(?P<pID>\d+)/',  'mydjango.people.views.details'),
     (r'^people/Info/',  'mydjango.people.views.details'),
     (r'^people/', 'mydjango.people.views.index'),
-
+    (r'^fitness/reps/chinups/', 'mydjango.Fitness.views.replistchinups'),
     (r'^fitness/reps/', 'mydjango.Fitness.views.replist'),
     (r'^fitness/weight/', 'mydjango.Fitness.views.weightlist'),
     (r'^fitness/running/', 'mydjango.Fitness.views.runlist'),
