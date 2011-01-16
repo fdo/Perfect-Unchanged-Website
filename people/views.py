@@ -25,7 +25,9 @@ def what(request):
     response.write("<li>%sskimpy running diary</a></li>\n" % link) 
     link = "<a href=\"/fitness/reps/\">\n"
     response.write("<li>%sexercise</a></li>\n" % link) 
-    response.write("<p>coming soon I will let a SQL query be modified by anybody<br> (I am concerned about SQL injection...)<p>\n")
+    link = "<a href=\"/fitness/reps/chinups/\">\n"
+    response.write("<li>%schinups</a></li>\n" % link) 
+    response.write("<p>Coming soon, using templates.<p>\n")
     response.write("</body></html>\n")
     return response
     
