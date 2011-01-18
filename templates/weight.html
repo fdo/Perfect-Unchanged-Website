@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us" >
+<head>
+<title>Like a YO-YO</title>
+</head>
+<body>
+<table width=100%>
+<tr bgcolor="yellow"><td colspan="3">
+<font size="4" color="blue">A record of my weight and various ramblings</font>
+</td></tr>
+<tr valign="top"><td width=30% bgcolor="black"><font color="cyan" size="3">
+{% for w in wlist reversed %}
+I weighed {{w.damage}} on {{w.timeenter.month}}/{{w.timeenter.day}}/{{w.timeenter.year}} ( {{w.data}} )<br>
+{% endfor%}
+</font></td></tr>
+</table>
+</body>
+</html>

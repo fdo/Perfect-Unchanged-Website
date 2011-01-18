@@ -1,5 +1,5 @@
 # Crete your views here.
-from django.shortcuts import HttpResponse
+from django.shortcuts import HttpResponse, render_to_response, get_object_or_404
 from mydjango.Fitness.models import Reps, Weight, Running
 
 def index(request):
@@ -31,7 +31,7 @@ def replistchinups(request):
             response.write("%s--%s.<br>" % (junk,p.more)) 
     return response
 
-def weightlist(request):
+def oldweightlist(request):
     response = HttpResponse()
     response.write("<html><body><center><H2>Obsessing on my weight</H2></center><HR>")
     wlist = Weight.objects.all()
@@ -40,6 +40,10 @@ def weightlist(request):
         response.write("%s--%s.<br>" % (junk,p.data)) 
     response.write("</body></html>")
     return response
+
+def weightlist(request):
+    wlist = Weight.objects.all()
+    return render_to_response('weight.html', {'wlist': wlist})
 
 def runlist(request):
     response = HttpResponse()
