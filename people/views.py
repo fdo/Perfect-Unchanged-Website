@@ -16,7 +16,7 @@ def what(request):
     response = HttpResponse()
     response.write("<body><html>\n")
     response.write("<title>database programming is what this is</title>\n")
-    response.write("<center><H3>Django code I fiddled up to learn how to access databases from the web</H3></center><HR>\n")
+    response.write("<center><H3>Django code I fiddled with to learn how to access databases from the web</H3></center><HR>\n")
     link = "<a href=\"/people/\">\n"
     response.write("<li>%slist of people</a></li>\n" % link) 
     link = "<a href=\"/fitness/weight/\">\n"
@@ -28,7 +28,7 @@ def what(request):
     link = "<a href=\"/fitness/reps/chinups/\">\n"
     response.write("<li>%schinups</a></li>\n" % link) 
     response.write("<p>Coming soon, forms...<p>\n")
-    response.write("<a href=\"http://fit.gorchs.net/\">this code in action</a>")
+    response.write("<a href=\"https://github.com/fdo/mydjango\">the code for this website</a>")
     response.write("</body></html>\n")
     return response
     
