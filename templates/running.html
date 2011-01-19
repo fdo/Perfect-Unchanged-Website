@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% block title %}Run like an Egyptian{% endblock %}
+{% block contentleft %}<p><p>A record of minutes run and various ramblings
+{% endblock %}{% block contentcenter %}{% for r in rlist reversed %}
+I ran {{r.minutes}} minutes on {{r.timeenter.month}}/{{r.timeenter.day}}/{{r.timeenter.year}} ( {{r.data}} )<br>
+{% endfor%}
+</font>{% endblock %}{% block contentright %}
+<br>name<br>address<br>favorite URL{% endblock %}</table>
+</body>
+</html>

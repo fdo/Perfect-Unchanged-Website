@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us" >
+<head>
+<title>{% block title %}Fernando's{% endblock %}</title>
+</head>
+<body>
+<table width=100%>
+<tr bgcolor="aa99aa"><td colspan="3">
+<center>
+<font size="4" color="red">Run!</font>
+</center>
+</td></tr>
+<tr valign="top"><td width=14% bgcolor="white"><font color="blue" size="2">
+{% block contentleft %}{% endblock %}
+</font></td>
+<td width=70% bgcolor="white"><font color="black" size="2">
+{% block contentcenter %}{% endblock %}
+</font></td>
+<td width=10% bgcolor="cyan"><font color="brown" size="1">
+{% block contentright %}{% endblock %}
+</font></td></tr>
+</table>
+</body>
+</html>
