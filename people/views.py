@@ -28,7 +28,7 @@ def what(request):
     link = "<a href=\"/fitness/reps/chinups/\">\n"
     response.write("<li>%schinups</a></li>\n" % link) 
     response.write("<p>Coming soon, forms...<p>\n")
-    response.write("<a href="http://fit.gorchs.net/">this code in action</a>")
+    response.write("<a href=\"http://fit.gorchs.net/\">this code in action</a>")
     response.write("</body></html>\n")
     return response
     
