@@ -45,7 +45,7 @@ def weightlist(request):
     wlist = Weight.objects.all()
     return render_to_response('weight.html', {'wlist': wlist})
 
-def runlist(request):
+def oldrunlist(request):
     response = HttpResponse()
     response.write("<html><body><center><H1>my running log</H1></center><HR>")
     runlist = Running.objects.all()
@@ -54,3 +54,7 @@ def runlist(request):
         response.write("%s--%s.<br>" % (junk,p.data)) 
     response.write("</body></html>")
     return response
+
+def runlist(request):
+    rlist = Running.objects.all()
+    return render_to_response('running.html', {'rlist': rlist})

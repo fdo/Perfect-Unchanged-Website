@@ -1,1 +1,1 @@
-scite settings.py urls.py ./templates/weight.html ./people/views.py ./people/models.py ./Fitness/views.py ./Fitness/models.py &
+scite settings.py urls.py ./templates/base.html ./templates/running.html ./templates/weight.html ./people/views.py ./people/models.py ./Fitness/views.py ./Fitness/models.py &
