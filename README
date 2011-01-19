@@ -1,3 +1,7 @@
-I don't see a reason why this wouldnt work on any machine with python and django (and sqlite) installed.
+reading Sam's Lurn Django in 24 hours
 
-Well after you rename the project to 'sams' and who know what else will bite you...
+trying to absorb as much as possible before returning this book back to the library
+
+I am using sqlite rather than MySQL
+
+I am keeping my hosted website in sync with my laptop using GitHub, I like it.
