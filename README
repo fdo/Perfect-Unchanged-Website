@@ -1,7 +1,4 @@
-reading Sam's Lurn Django in 24 hours
-
-trying to absorb as much as possible before returning this book back to the library
-
-I am using sqlite rather than MySQL
-
-I am keeping my hosted website in sync with my laptop using GitHub, I like it.
+Reading Sam's Lurn Django in 24 hours
+and I am trying to absorb as much as possible before returning this book back to the library.
+This app uses sqlite rather than MySQL.
+I am keeping my hosted website (fit.gorchs.net) in sync with my laptop using GitHub, I like it.
