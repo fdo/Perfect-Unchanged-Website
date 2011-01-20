@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us" >
 <head>
-<title>Kinda Like A YO-YO</title>
+<title>Kinda Sorta Like A YO-YO</title>
 </head>
 <body>
 <table width=100%>
-<tr bgcolor="#ddeeff"><td colspan="3">
+<tr bgcolor="#ddbbcc"><td>
+<a href="/fitness/running/">running</a><br>
+<a href="/fitness/reps/">all exercise</a><br>
+<a href="/fitness/reps/chinups/">chinups</a><br>
+<a href="/people/">people</a>
+<a href="https://github.com/fdo/mydjango/">this code</a><br>
+</td></tr>
+<tr bgcolor="#ddbbcc"><td colspan="3">
 <center>
-<font size="3" color="blue">A record of my weight and various ramblings</font>
+<font size="4" color="blue">A record of my weight and various ramblings</font>
 </center>
 </td></tr>
 {% for w in wlist reversed %}
-<tr valign="top"><td width=5% bgcolor="{% cycle #bbccdd,#ddbbcc %}">
-<td bgcolor="{% cycle #bbccdd,#ddbbcc %}" width=95%><font color="#010130" size="2">
-I weighed {{w.damage}} on {{w.timeenter.month}}/{{w.timeenter.day}}/{{w.timeenter.year}} ( {{w.data}} )<br>
+<tr valign="top"><td width=5% bgcolor="{% cycle #bbccdd,#ddeeff %}">
+<td bgcolor="{% cycle #bbccdd,#ddeeff %}" width=80%><font color="#010130" size="3">
+I weighed {{w.damage}} on {{w.timeenter.month}}/{{w.timeenter.day}}/{{w.timeenter.year}} ( {{w.data}} )
 {% endfor%}
 </font></td></tr>
 </table>

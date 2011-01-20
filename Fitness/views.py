@@ -23,7 +23,7 @@ def replist(request):
 
 def replistchinups(request):
     response = HttpResponse()
-    response.write("<html><body><center><H1>all my exercise that's fit to print</H1></center><HR>")
+    response.write("<html><body><center><H3>CHINUPS</H3></center><HR>")
     replist = Reps.objects.all()
     for p in reversed(replist):
         if (p.exercise == 'chinups'):
