@@ -1,0 +1,12 @@
+{% extends "mybase.html" %}
+
+{% block title %}Help, Police!{% endblock %}
+{% block content %}
+<h3>{{ massage }}</h3>
+<form method="post" action=".">{% csrf_token %}
+<table>
+{{ rForm }}
+</table>
+<input type="submit" name="submit" value="Add"/>
+</form>
+{% endblock %}
