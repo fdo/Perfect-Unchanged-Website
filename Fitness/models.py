@@ -15,6 +15,14 @@ class Reps(models.Model):
     reps = models.IntegerField()
     more = models.CharField('morenotes', max_length=200)
     timeenter = models.DateTimeField('timeenter')
+
+class PoliceReport(models.Model):
+    offense = models.CharField('Offense', max_length=60)
+    license_number = models.CharField('plates', max_length=10)
+    Details = models.TextField('Details', max_length=2048)
+    timeenter = models.DateTimeField('timeenter')
+    
+    
     
     def __str__(self):
          return '%s' % (self.exercise)

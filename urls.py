@@ -22,5 +22,7 @@ urlpatterns = patterns('',
     (r'^fitness/weight/', 'mydjango.Fitness.views.weightlist'),
     (r'^fitness/running/', 'mydjango.Fitness.views.runlist'),
     (r'^fitness/', 'mydjango.Fitness.views.index'),
+    (r'^home/contact/', 'mydjango.Home.views.contact_view'),
+    (r'^police/', 'mydjango.Home.views.police'),
     (r'^', 'mydjango.people.views.what'),
 )
