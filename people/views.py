@@ -15,10 +15,8 @@ def index(request):
 def what(request):
     response = HttpResponse()
     response.write("<body><html>\n")
-    response.write("<title>database programming is what this is</title>\n")
-    response.write("<center><H3>Django code I fiddled with to learn how to access databases from the web</H3></center><HR>\n")
-    link = "<a href=\"/people/\">\n"
-    response.write("<li>%slist of people</a></li>\n" % link) 
+    response.write("<title>accessing a database for fun and profit, well for fun</title>\n")
+    response.write("<center><H4>no static pages here<br> goto www.gorchs.net for static pages<br>Django and SQLite make this too easy...</H4></center><HR>\n")
     link = "<a href=\"/fitness/weight/\">\n"
     response.write("<li>%srecordings of my weight</a></li>\n" % link) 
     link = "<a href=\"/fitness/running/\">\n"
@@ -27,8 +25,13 @@ def what(request):
     response.write("<li>%sexercise</a></li>\n" % link) 
     link = "<a href=\"/fitness/reps/chinups/\">\n"
     response.write("<li>%schinups</a></li>\n" % link) 
-    response.write("<p>Coming soon, forms...<p>\n")
-    response.write("<a href=\"https://github.com/fdo/mydjango\">the code for this website</a>")
+    link = "<a href=\"/fitness/reps/pushups/\">\n"
+    response.write("<li>%spushups</a></li>\n" % link) 
+    link = "<a href=\"/people/\">\n"
+    response.write("<li>%slist of people</a></li>\n" % link) 
+    link = "<a href=\"/police/\">\n"
+    response.write("<li>%sHelp Police!</li>\n" % link)
+    response.write("<p><a href=\"https://github.com/fdo/mydjango\">the code for this website</a>")
     response.write("</body></html>\n")
     return response
     

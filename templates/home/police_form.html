@@ -2,7 +2,7 @@
 
 {% block title %}Help, Police!{% endblock %}
 {% block content %}
-<h3>{{ massage }}</h3>
+<h3>{{ message }}</h3>
 <form method="post" action=".">{% csrf_token %}
 <table>
 {{ rForm }}

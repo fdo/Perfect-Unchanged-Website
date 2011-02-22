@@ -31,6 +31,16 @@ def replistchinups(request):
             response.write("%s--%s.<br>" % (junk,p.more)) 
     return response
 
+def replistpushups(request):
+    response = HttpResponse()
+    response.write("<html><body><center><H3>PUSHUPS</H3></center><HR>")
+    replist = Reps.objects.all()
+    for p in reversed(replist):
+        if (p.exercise == 'pushups'):
+            junk = "I did %d %s on %s" % (p.reps,p.exercise,p.timeenter)
+            response.write("%s--%s.<br>" % (junk,p.more)) 
+    return response
+
 def oldweightlist(request):
     response = HttpResponse()
     response.write("<html><body><center><H2>Obsessing on my weight</H2></center><HR>")
