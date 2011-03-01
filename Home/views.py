@@ -16,11 +16,15 @@ class PoliceForm(forms.Form):
     license_number = forms.CharField(max_length=10)
     Details = forms.CharField(widget=forms.Textarea(attrs={'rows':'4','cols':'40'}))
 
+class LookyForm(forms.Form):
+    offense = forms.CharField(max_length=60)
+    license_number = forms.CharField(max_length=10)
+
 def contact_view(request):
     eForm = EmailForm()
     return render_to_response('home/contact_form.html', {'eForm':eForm})
 
-def police(request, pID='1'):
+def police(request):
     rForm = PoliceForm()
     if request.method == 'GET':
         message = 'Please add your observations to our database, paranoia will destroya. JUST THE FACTS'
@@ -40,5 +44,25 @@ def police(request, pID='1'):
                     message = 'Database error %s' % rf.is_valid()
             else:
                 message = 'Invalid data in Form'
-
     return render_to_response('home/police_form.html', {'rForm':rForm, 'message':message}, context_instance=RequestContext(request))
+
+def looky(request):
+    lForm = LookyForm()
+    if request.method == 'GET':
+        message = 'Exactly what kind of reports do you want to look at?'
+    if request.method == 'POST':
+        if request.POST['submit'] == 'Find It':
+            lf = LookyForm(request.POST.copy())
+            if lf.is_valid():
+                try:
+                    report=PoliceReport()
+# do a object.all on the police report table 
+# and do a select on offense and or license number
+                    lookyoffense = lf.cleaned_data['offense']
+                    lookylicense_number = lf.cleaned_data['license_number']
+                    message = 'Here is the data you asked for. %s' % lookylicense_number
+                except:
+                    message = 'Database error %s' % lf.is_valid()
+            else:
+                message = 'Invalid data in Form'
+    return render_to_response('home/looky_form.html', {'lForm':lForm, 'message':message}, context_instance=RequestContext(request))

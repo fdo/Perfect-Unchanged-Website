@@ -25,5 +25,6 @@ urlpatterns = patterns('',
     (r'^fitness/', 'mydjango.Fitness.views.index'),
     (r'^home/contact/', 'mydjango.Home.views.contact_view'),
     (r'^police/', 'mydjango.Home.views.police'),
+    (r'^looky/', 'mydjango.Home.views.looky'),
     (r'^', 'mydjango.people.views.what'),
 )
