@@ -27,7 +27,7 @@ def contact_view(request):
 def police(request):
     rForm = PoliceForm()
     if request.method == 'GET':
-        message = 'Please add your observations to our database, paranoia will destroya. JUST THE FACTS'
+        message = 'Please add your observations to our database. Thanks for reporting.'
     if request.method == 'POST':
         if request.POST['submit'] == 'Add':
             rf = PoliceForm(request.POST.copy())
