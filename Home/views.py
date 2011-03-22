@@ -39,7 +39,7 @@ def police(request):
                     report.timeenter = datetime.now()
                     report.license_number = rf.cleaned_data['license_number']
                     report.save()
-                    goofynumber = report.id + 234244
+                    goofynumber = report.id + 474244
                     message = 'Thank you for reporting this. The entry number for this incident is %s ' % goofynumber
                 except:
                     message = 'Database error %s' % rf.is_valid()
