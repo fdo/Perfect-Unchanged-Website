@@ -1,6 +1,7 @@
 {% extends "mybase.html" %}
 
 {% block title %}Help, Police!{% endblock %}
+{% block heading %}Help, Police!{% endblock %}
 {% block content %}
 <h3>{{ message }}</h3>
 <form method="post" action=".">{% csrf_token %}
