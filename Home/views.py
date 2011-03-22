@@ -14,7 +14,7 @@ class EmailForm(forms.Form):
 class PoliceForm(forms.Form):
     offense = forms.CharField(max_length=60)
     license_number = forms.CharField(max_length=10)
-    Details = forms.CharField(widget=forms.Textarea(attrs={'rows':'13','cols':'110'}))
+    Details = forms.CharField(widget=forms.Textarea(attrs={'rows':'10','cols':'110'}))
 
 class LookyForm(forms.Form):
     offense = forms.CharField(max_length=60)
