@@ -96,4 +96,5 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'mydjango.people',
     'mydjango.Fitness',
+    'mydjango.thought',
 )

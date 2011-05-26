@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+class Thoughts(models.Model):
+    title= models.CharField('Title', max_length=60)
+    author = models.CharField('Author', max_length=10)
+    details = models.TextField('Details', max_length=2048)
+    timeenter = models.DateTimeField('TimeEnter')
+
+    def __str__(self):
+         return '%s' % (self.exercise)
