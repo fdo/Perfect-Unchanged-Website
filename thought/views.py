@@ -28,10 +28,10 @@ def thought(request):
                     goofynumber = report.id + 474244
                     message = 'Thank you for sharing this. The entry number for your thought is %s ' % goofynumber
                     f = open('/var/www/think/hey.html','w')
-                    f.write("<html><body><center><FONT color=#000090 size=6> %s </FONT><FONT color=#000090 size=2>by</FONT>" % report.title)
-                    f.write("<FONT color=#000090 size=4>%s </FONT></center><HR>" % report.author)
+                    f.write("<html><body><center><FONT color=#000090 size=6> %s </FONT><FONT color=#000090 size=2> by </FONT>" % report.title)
+                    f.write("<FONT color=#000090 size=4> %s </FONT></center><HR>" % report.author)
                     f.write("<FONT color=#000090 size=3><pre> %s " % report.details)
-                    f.write("<br><FONT color=#00ff33 size=2>the database id number is %s " % report.id)
+                    f.write("<br><FONT color=#00ff33 size=2> The database id number is %s " % report.id)
                     f.close()
                 except:
                     message = 'Database error %s' % rf.is_valid()
