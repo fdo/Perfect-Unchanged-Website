@@ -4,6 +4,8 @@ from datetime import datetime
 from django import forms
 from mydjango.thought.models import Thoughts
 from django.template import Context, Template, RequestContext
+from mydjango.settings import STATIC_WEBPAGE_ROOT
+from mydjango.settings import STATIC_URL
 
 class ThoughtForm(forms.Form):
     title = forms.CharField(max_length=60)
@@ -26,12 +28,15 @@ def thought(request):
                     report.author = rf.cleaned_data['author']
                     report.save()
                     goofynumber = report.id + 474244
-                    message = 'Thank you for sharing this. The entry number for your thought is %s ' % goofynumber
-                    f = open('/var/www/think/hey.html','w')
-                    f.write("<html><body><center><FONT color=#000090 size=6> %s </FONT><FONT color=#000090 size=2> by </FONT>" % report.title)
-                    f.write("<FONT color=#000090 size=4> %s </FONT></center><HR>" % report.author)
-                    f.write("<FONT color=#000090 size=3><pre> %s " % report.details)
-                    f.write("<br><FONT color=#00ff33 size=2> The database id number is %s " % report.id)
+                    # the following could be be in it's own unction 		    
+                    newfile = STATIC_WEBPAGE_ROOT + 'think/' + report.author + '-' +str(report.id) + '.html'
+                    newurl = STATIC_URL + 'think/' + report.author + '-' + str(report.id) + '.html'
+                    message = 'Thanks! You created a webpage at %s' % newurl
+                    f = open(newfile,'w')
+                    f.write("<html><body><center><FONT color=#000090 size=6> %s </FONT><FONT color=#000090 size=2> by </FONT>\n" % report.title)
+                    f.write("<FONT color=#000090 size=4> %s </FONT></center><HR>\n" % report.author)
+                    f.write("<FONT color=#000090 size=3><pre> %s\n " % report.details)
+                    #f.write("<br><FONT color=#002080 size=2> static web page root is %s " % newfile)
                     f.close()
                 except:
                     message = 'Database error %s' % rf.is_valid()

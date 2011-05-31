@@ -52,6 +52,13 @@ MEDIA_ROOT = '/home/fdo/projects/mydjango/media/'
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = 'http://localhost:9090/media/'
 
+# These settings should be self explanatory
+# and this comment is actually not any help at all
+#STATIC_WEBPAGE_ROOT = '/home4/fdo/www/'
+#STATIC_URL = 'http://gorchs.net/'
+STATIC_WEBPAGE_ROOT = '/var/www/'
+STATIC_URL = 'http://localhost/'
+
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
