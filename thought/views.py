@@ -28,7 +28,6 @@ def thought(request):
                     report.author = rf.cleaned_data['author']
                     report.save()
                     goofynumber = report.id + 474244
-                    # the following could be be in it's own unction 		    
                     newfile = STATIC_WEBPAGE_ROOT + 'think/' + report.author + '-' +str(report.id) + '.html'
                     newurl = STATIC_URL + 'think/' + report.author + '-' + str(report.id) + '.html'
                     message = 'Thanks! You created a webpage at %s' % newurl
