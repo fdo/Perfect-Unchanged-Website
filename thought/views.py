@@ -9,7 +9,7 @@ from mydjango.settings import STATIC_URL
 
 class ThoughtForm(forms.Form):
     title = forms.CharField(max_length=60)
-    author = forms.CharField(max_length=10)
+    author = forms.CharField(max_length=30)
     details = forms.CharField(widget=forms.Textarea(attrs={'rows':'10','cols':'110'}))
 
 def thought(request):
