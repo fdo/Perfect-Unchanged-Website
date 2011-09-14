@@ -27,5 +27,6 @@ urlpatterns = patterns('',
     (r'^police/', 'mydjango.Home.views.police'),
     (r'^looky/', 'mydjango.Home.views.looky'),
     (r'^thought/', 'mydjango.thought.views.thought'),
+    (r'^note/', 'mydjango.thought.views.note'),
     (r'^', 'mydjango.people.views.what'),
 )

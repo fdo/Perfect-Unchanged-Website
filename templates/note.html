@@ -1,0 +1,13 @@
+{% extends "mybusiness.html" %}
+
+{% block title %}hmm{% endblock %}
+{% block heading %}Jot it down and slap it on the web{% endblock %}
+{% block content %}
+<h4>{{ message }}</h4>
+<form method="post" action=".">{% csrf_token %}
+<table>
+{{ rForm }}
+</table>
+<input type="submit" name="submit" value="Add"/>
+</form>
+{% endblock %}

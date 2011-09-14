@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us" >
+<head>
+<link rel="stylesheet" href="style.css"/>
+<title>{% block title %}Fernando's{% endblock %}</title>
+</head>
+<body>
+<table width=100% bgcolor="#328402">
+<tr><td>
+<font size="2" color="#ffffff">{% block heading %}my personal website{% endblock %}</font>
+</td></tr>
+<tr><td>
+<font color="cyan" size="2"> Django rocks!                           </font>
+</td></tr>
+</table>
+{% block content %}{% endblock %}
+</body>
+</html>

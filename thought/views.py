@@ -43,3 +43,34 @@ def thought(request):
                 message = 'Invalid data in Form'
     return render_to_response('thought.html', {'rForm':rForm, 'message':message}, context_instance=RequestContext(request))
 
+def note(request):
+    rForm = ThoughtForm()
+    if request.method == 'GET':
+        message = 'Ramblings go here.'
+    if request.method == 'POST':
+        if request.POST['submit'] == 'Add':
+            rf = ThoughtForm(request.POST.copy())
+            if rf.is_valid():
+                try:
+                    report=Thoughts()
+                    report.title = rf.cleaned_data['title']
+                    report.details = rf.cleaned_data['details']
+                    report.timeenter = datetime.now()
+                    report.author = rf.cleaned_data['author']
+                    report.save()
+                    goofynumber = report.id + 474244
+                    newfile = STATIC_WEBPAGE_ROOT + 'think/' + report.author + '-' +str(report.id) + '.html'
+                    newurl = STATIC_URL + 'think/' + report.author + '-' + str(report.id) + '.html'
+                    message = '%s' % newurl
+                    f = open(newfile,'w')
+                    f.write("<html><body><center><FONT color=#000090 size=6> %s </FONT><FONT color=#000090 size=2> by </FONT>\n" % report.title)
+                    f.write("<FONT color=#000090 size=4> %s </FONT></center><HR>\n" % report.author)
+                    f.write("<FONT color=#000090 size=3><pre> %s\n " % report.details)
+                    #f.write("<br><FONT color=#002080 size=2> static web page root is %s " % newfile)
+                    f.close()
+                except:
+                    message = 'Database error %s' % rf.is_valid()
+            else:
+                message = 'Invalid data in Form'
+    return render_to_response('note.html', {'rForm':rForm, 'message':message}, context_instance=RequestContext(request))
+
